@@ -1,0 +1,10 @@
+rows = int(input("Enter number of rows: "))
+triangle = []
+
+for i in range(rows):
+    row = [1] * (i + 1)
+    if i >= 2:
+        for j in range(1, i):
+            row[j] = triangle[i-1][j-1] + triangle[i-1][j]
+    triangle.append(row)
+    print(" ".join(map(str, row)))
